@@ -32,10 +32,16 @@ class IncreaseQualityStrategy implements UpdateQualityStrategyInterface
      *
      * @return int
      */
-    public function updateQuality($currentQuality, $itemAge) : int
+    public function updateQuality($currentQuality, $itemAge): int
     {
-        if ($currentQuality < $this->maximumQuality) {
+        if ($itemAge < 0) {
+            $currentQuality = $currentQuality + 2;
+        } else {
             $currentQuality++;
+        }
+
+        if ($currentQuality > $this->maximumQuality) {
+            return $this->maximumQuality;
         }
 
         return $currentQuality;

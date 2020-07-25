@@ -20,6 +20,18 @@ class IncreaseQualityStrategyTest extends TestCase
         $this->assertEquals($expected, $newQuality);
     }
 
+    public function testUpdateQualityIncreaseByTwoWhenAgeIsBelowZero()
+    {
+        $strategy = new IncreaseQualityStrategy();
+
+        $currentQuality = 10;
+        $expected = $currentQuality + 2;
+
+        $newQuality = $strategy->updateQuality($currentQuality, -10);
+
+        $this->assertEquals($expected, $newQuality);
+    }
+
 
     public function testUpdateQualityDoesNotIncreaseWhenAlreadyAtMaximum()
     {

@@ -5,23 +5,6 @@ namespace App;
 use App\QualityStrategy\UpdateQualityStrategyInterface;
 use App\SellIndaysStrategy\UpdateSellInDaysStrategyInterface;
 
-/**
- *
- * DISCLAIMER
- *
- *
- * I'm kind of breaking a 4th wall here and taking the risk to alter this class anyway :),
- * against the constraint in the description of this challenge.
- *
- * Why?
- * Because the reasoning for the constraint was weak, and based on the personal feelings of a "goblin-developer".
- * Those kind of things should not stand in the way of applying best practices and writing cleaner code.
- * In a codebase that is maintained by multiple developers, there is no such thing as "private code ownership".
- *
- * In a real life situation I'd go into dialogue with the "goblin"  and work things out in a professional way ;)
- */
-
-
 /*
  * Class Item
  * @package App
