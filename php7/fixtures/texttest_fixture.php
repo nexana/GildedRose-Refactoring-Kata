@@ -5,8 +5,6 @@ require_once __DIR__ . '/../vendor/autoload.php';
 use App\GildedRose;
 use App\Item;
 
-echo "OMGHAI!\n";
-
 $items = array(
     new Item('+5 Dexterity Vest', 10, 20),
     new Item('Aged Brie', 2, 0),
@@ -22,7 +20,7 @@ $items = array(
 
 $app = new GildedRose($items);
 
-$days = 5;
+$days = 80;
 if (count($argv) > 1) {
     $days = (int)$argv[1];
 }
