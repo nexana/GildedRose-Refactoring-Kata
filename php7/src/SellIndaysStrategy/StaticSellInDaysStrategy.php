@@ -15,7 +15,7 @@ class StaticSellInDaysStrategy implements UpdateSellInDaysStrategyInterface
      *
      * @return int
      */
-    public function updateSellInDays($currentDays): int
+    public function updateSellInDays(int $currentDays): int
     {
         return $currentDays;
     }

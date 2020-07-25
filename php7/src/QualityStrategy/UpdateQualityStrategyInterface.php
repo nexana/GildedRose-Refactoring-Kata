@@ -9,12 +9,12 @@ namespace App\QualityStrategy;
 interface UpdateQualityStrategyInterface
 {
     /**
-     * @param $currentQuality
+     * @param int $currentQuality
      *
-     * @param $itemAge
+     * @param int $itemAge
      *
      * @return int
      */
-    public function updateQuality($currentQuality, $itemAge): int;
+    public function updateQuality(int $currentQuality, int $itemAge): int;
 
 }

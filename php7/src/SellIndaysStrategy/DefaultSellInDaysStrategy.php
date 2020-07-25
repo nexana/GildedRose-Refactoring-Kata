@@ -5,11 +5,11 @@ namespace App\SellIndaysStrategy;
 class DefaultSellInDaysStrategy implements UpdateSellInDaysStrategyInterface
 {
     /**
-     * @param integer $currentDays
+     * @param int $currentDays
      *
-     * @return integer
+     * @return int
      */
-    public function updateSellInDays($currentDays):int
+    public function updateSellInDays(int $currentDays): int
     {
         return $currentDays - 1;
     }

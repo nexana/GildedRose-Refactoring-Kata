@@ -28,7 +28,7 @@ class BackstagePassQualityStrategy implements UpdateQualityStrategyInterface
      *
      * @return int
      */
-    public function updateQuality($currentQuality, $itemAge): int
+    public function updateQuality(int $currentQuality, int $itemAge): int
     {
         switch (true) {
             case $itemAge < 0 :

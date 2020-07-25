@@ -5,10 +5,10 @@ namespace App\SellIndaysStrategy;
 interface UpdateSellInDaysStrategyInterface
 {
     /**
-     * @param integer $currentDays
+     * @param int $currentDays
      *
      * @return int
      */
-    public function updateSellInDays($currentDays): int;
+    public function updateSellInDays(int $currentDays): int;
 
 }
