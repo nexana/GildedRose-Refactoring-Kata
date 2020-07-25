@@ -28,20 +28,20 @@ class BackstagePassQualityStrategy implements UpdateQualityStrategyInterface
      *
      * @return int
      */
-    public function updateQuality($currentQuality, $itemAge) : int
+    public function updateQuality($currentQuality, $itemAge): int
     {
         switch (true) {
-            case $itemAge <= 0 :
+            case $itemAge < 0 :
                 {
                     $currentQuality = 0;
                     break;
                 }
-            case $itemAge <= 5 :
+            case $itemAge < 5 :
                 {
                     $currentQuality += 3;
                     break;
                 }
-            case $itemAge <= 10:
+            case $itemAge < 10:
                 {
                     $currentQuality += 2;
                     break;
@@ -52,7 +52,6 @@ class BackstagePassQualityStrategy implements UpdateQualityStrategyInterface
                     break;
                 }
         }
-
 
         if ($currentQuality > $this->maximumQuality) {
             return $this->maximumQuality;

@@ -28,44 +28,48 @@ class BackstagePassQualityStrategyTest extends \PHPUnit\Framework\TestCase
 
     }
 
-    public function testUpdateQualityReturnsZeroWhenItemAgeIsBelowOne()
+
+    public function testUpdateQualityReturnsZeroWhenItemAgeBelowZero()
     {
         $strategy = new BackstagePassQualityStrategy();
 
-        $newQuality = $strategy->updateQuality(40, -5);
+        $newQuality = $strategy->updateQuality(40, -1);
 
         $this->assertEquals(0, $newQuality);
     }
 
-    public function testUpdateQualityReturnsZeroWhenItemAgeIsZero()
-    {
-        $strategy = new BackstagePassQualityStrategy();
-
-        $newQuality = $strategy->updateQuality(40, 0);
-
-        $this->assertEquals(0, $newQuality);
-    }
-
-    public function testUpdateQualityIncreaseesByTwoWhenAgeIsBetween10And5()
+    public function testUpdateQualityIncreaseesByTwoWhenAgeIsLowerThan10AndHigherThan4()
     {
         $strategy = new BackstagePassQualityStrategy();
 
         $currentQuality = 10;
         $expected = $currentQuality + 2;
 
-        $newQuality = $strategy->updateQuality(10, 6);
+        $newQuality = $strategy->updateQuality(10, 5);
 
         $this->assertEquals($expected, $newQuality);
     }
 
-    public function testUpdateQualityIncreaseesByThreeWhenAgeIsBetween5And0()
+    public function testUpdateQualityIncreaseesByThreeWhenAgeIsBetween4And0Inclusive()
     {
         $strategy = new BackstagePassQualityStrategy();
 
         $currentQuality = 10;
         $expected = $currentQuality + 3;
 
-        $newQuality = $strategy->updateQuality(10, 1);
+        $newQuality = $strategy->updateQuality(10, 4);
+
+        $this->assertEquals($expected, $newQuality);
+    }
+
+    public function testUpdateQualityIncreaseesByOneWhenAgeIs10()
+    {
+        $strategy = new BackstagePassQualityStrategy();
+
+        $currentQuality = 10;
+        $expected = $currentQuality + 1;
+
+        $newQuality = $strategy->updateQuality(10, 10);
 
         $this->assertEquals($expected, $newQuality);
     }
